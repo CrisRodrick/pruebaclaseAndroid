@@ -38,7 +38,7 @@ public class Alfie_Wallet implements Wallet{
             saldo = saldo + cantidad;
             transacciones.add("Deposito: " + cantidad);
             String saldoR = String.format("%.0f", this.saldo);
-            System.out.println("Deposito correcto su nuevo saldo es :  $" + saldoR);
+            System.out.println("Deposito correcto ");
         }
         else {
             System.out.println("Error la cantidad debe ser mayor a 0");
@@ -52,7 +52,7 @@ public class Alfie_Wallet implements Wallet{
             saldo -= cantidad;
             transacciones.add("Retiro: " + cantidad);
             String saldoR = String.format("%.0f", this.saldo);
-            System.out.println("Retiro exitoso su nuevo saldo es: $" + saldoR);
+            System.out.println("Retiro exitoso ");
             
         }
         else {
