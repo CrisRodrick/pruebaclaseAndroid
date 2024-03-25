@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Alfie_Wallet">
+  <ClassDiagramComponents>
+    <Class name="Alfie_Wallet" package="com.mycompany.alfie_wallet" visibility="public" xPosition="38.0" yPosition="221.0">
+      <Fields>
+        <Field name="saldo" type="double" visibility="private"/>
+        <Field name="transacciones" type="List&lt;String&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="obtenerSaldo" returnType="double" visibility="public"/>
+        <Method name="depositar" returnType="void" visibility="public">
+          <Argument type="double" name="cantidad"/>
+        </Method>
+        <Method name="retirar" returnType="void" visibility="public">
+          <Argument type="double" name="cantidad"/>
+        </Method>
+        <Method name="convertirMoneda" returnType="void" visibility="public">
+          <Argument type="int" name="aMoneda"/>
+          <Argument type="Double" name="pesosChilenos"/>
+        </Method>
+        <Method name="obtenerTransacciones" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="com.mycompany.alfie_wallet" visibility="public" xPosition="38.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Usuario" package="com.mycompany.alfie_wallet" visibility="public" xPosition="471.0" yPosition="221.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="wallet" type="Alfie_Wallet" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="par"/>
+          <Argument type="String" name="bruno"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="Alfie_Wallet" name="wallet"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getWallet" returnType="Alfie_Wallet" visibility="public"/>
+        <Method name="setWallet" returnType="void" visibility="public">
+          <Argument type="Alfie_Wallet" name="wallet"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Wallet" package="com.mycompany.alfie_wallet" visibility="public" xPosition="312.0" yPosition="20.0">
+      <Methods>
+        <Method name="obtenerSaldo" returnType="double" visibility="package"/>
+        <Method name="depositar" returnType="void" visibility="package">
+          <Argument type="double" name="cantidad"/>
+        </Method>
+        <Method name="retirar" returnType="void" visibility="package">
+          <Argument type="double" name="cantidad"/>
+        </Method>
+        <Method name="convertirMoneda" returnType="void" visibility="package">
+          <Argument type="int" name="aMoneda"/>
+          <Argument type="Double" name="pesosChilenos"/>
+        </Method>
+        <Method name="obtenerTransacciones" returnType="void" visibility="package"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="com.mycompany.alfie_wallet.Alfie_Wallet" target="com.mycompany.alfie_wallet.Wallet"/>
+    <HasRelation name="wallet" source="com.mycompany.alfie_wallet.Usuario" target="com.mycompany.alfie_wallet.Alfie_Wallet" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.mycompany.alfie_wallet.Usuario" target="com.mycompany.alfie_wallet.Wallet" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
