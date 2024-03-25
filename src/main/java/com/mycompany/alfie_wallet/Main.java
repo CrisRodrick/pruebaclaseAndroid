@@ -7,8 +7,10 @@ import java.util.ArrayList;
 
 
 /**
- * 
  * @author Pc Cristian
+ * nota: el Main muestra todas las transacciones solicitadas. Se concibe la
+ * conversion de moneda solo como una operacion, según lo entendido, 
+ * no se suma al saldo
  */
 public class Main {
 
