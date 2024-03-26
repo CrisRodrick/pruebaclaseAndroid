@@ -28,7 +28,7 @@ public class Alfie_Wallet implements Wallet{
     
     @Override //método Obtener Saldo
     public double obtenerSaldo() {
-        transacciones.add("Deposito: " + saldo);
+       // transacciones.add("Deposito: " + saldo);
     return saldo;
     }
 
