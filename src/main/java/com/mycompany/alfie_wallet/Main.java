@@ -123,6 +123,7 @@ public class Main {
 
                 case 1:  //String.format + cod = cifras transformadas visualmente en String
                     System.out.println("Saldo actual: $" + String.format("%.0f", usuario1.getWallet().obtenerSaldo()));
+                    
                     break;
 
                 case 2:
