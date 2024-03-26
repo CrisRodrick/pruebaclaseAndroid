@@ -22,14 +22,14 @@ public class Alfie_Wallet implements Wallet{
 
     public Alfie_Wallet() {
         this.saldo = 0.0;
-        this.transacciones = new ArrayList <>();
+        this.transacciones = new ArrayList<>();
     }
     //Métodos (@override desde interface Wallet.java)
-    
+
     @Override //método Obtener Saldo
     public double obtenerSaldo() {
-       // transacciones.add("Deposito: " + saldo);
-    return saldo;
+
+        return saldo;
     }
 
     @Override //método Depositar
@@ -39,10 +39,9 @@ public class Alfie_Wallet implements Wallet{
             transacciones.add("Deposito: " + cantidad);
             String saldoR = String.format("%.0f", this.saldo);
             System.out.println("Deposito correcto ");
-        }
-        else {
+        } else {
             System.out.println("Error la cantidad debe ser mayor a 0");
-    }
+        }
     }
 
     @Override //método Retirar
@@ -53,9 +52,8 @@ public class Alfie_Wallet implements Wallet{
             transacciones.add("Retiro: " + cantidad);
             String saldoR = String.format("%.0f", this.saldo);
             System.out.println("Retiro exitoso ");
-            
-        }
-        else {
+
+        } else {
             System.out.println(" Error: saldo insuficiente o cantidad inválida ");
         }
     }
@@ -66,24 +64,26 @@ public class Alfie_Wallet implements Wallet{
         double tasaCambioUsd = 968;  // // Tasa de cambio: 1 Dólar = 968 pesos chilenos
         double tasaCambioEu = 1051.89; // // Tasa de cambio: 1 Euro = 1052 pesos chilenos
         // Verifica si la conversión es de USD o  EU  a CLP
-        if (aMoneda ==1) {
+        if (aMoneda == 1) {
             // Realiza la conversión a USD
-            double dolares  = pesosChilenos / tasaCambioUsd;
+            double dolares = pesosChilenos / tasaCambioUsd;
             transacciones.add("Conversión a dolar: $ " + dolares);
             System.out.println("La cantidad convertida a dolares es: $" + dolares);
-        } else if (aMoneda ==2) {
+        } else if (aMoneda == 2) {
             // Realiza la conversión a EU
-            double euros = pesosChilenos/ tasaCambioEu;
+            double euros = pesosChilenos / tasaCambioEu;
             transacciones.add("Conversión a euro: € " + euros);
-            System.out.println("La cantidad convertida a euros es €" + euros  );
+            System.out.println("La cantidad convertida a euros es €" + euros);
         } else {
             // Conversión no soportada
             System.out.println("Conversion no soportada.");
         }
     }
+
     @Override //método Obtener Transacciones
-     public void obtenerTransacciones(){
-        transacciones.forEach(transaccion->System.out.println(transaccion));
+    public void obtenerTransacciones() {
+        transacciones.forEach(transaccion -> System.out.println(transaccion));
+
     }
 
     
